@@ -1,0 +1,22 @@
+package com.pooja.customgridandroidimage;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+GridView gridview;
+    int pics[]={R.drawable.gingerbread,R.drawable.honeycomb,R.drawable.icecreamsandwich,R.drawable.jellybean,R.drawable.kitkat,R.drawable.lollipop};
+    String des[]={"gingerbread","honeycomb","icecreamsandwich","jellybean","kitkat","lollipop"};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        gridview=(GridView)findViewById(R.id.gridview);
+        customgrid_Adapter adapter=new customgrid_Adapter(MainActivity.this,pics,des);
+        gridview.setAdapter(adapter);
+    }
+}
